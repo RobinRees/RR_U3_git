@@ -7,20 +7,6 @@
 //       the corresponding course from `DATABASE.courses`.
 
 const DATABASE = {
-  // STUDENTS
-  // ========
-  // 
-  // Each student is an object in the form of:
-  //
-  //  {
-  //    studentId,
-  //    firstName,    
-  //    lastName,
-  //    courses: [
-  //      { courseId, started: { semester, year }, passedCredits },
-  //      ...
-  //    ]
-  //  }
   students: [
     {
       studentID: 0,

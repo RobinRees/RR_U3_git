@@ -13,6 +13,7 @@ body{
 
 #form_contain {
     display: flex;
+    flex-direction: column;
 
 }
 
