@@ -1,14 +1,13 @@
 "use strict";
 
-let selectTheElement = (selectElement) => {
-    return document.querySelector(selectElement);
-}
+
 
 //key up funktion
 function onKeyUp() {
     console.log(this.value);
-    let foundStudent = DATABASE.students.filter((student) => student.lastName.includes(input.value))
+    let foundStudent = DATABASE.students.filter((student) => student.lastName.toLowerCase().includes(input.value))
     console.log(foundStudent)
+
 }
 let input = document.querySelector("input");
 input.addEventListener("keyup", onKeyUp);
