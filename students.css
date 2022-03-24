@@ -25,7 +25,7 @@ form{
     font-size: larger;
 }
 
-.container {
+#container {
     margin-top: 15px;
     padding: 6px;
     border-radius: 6px;
