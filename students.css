@@ -1,6 +1,8 @@
 body{
     margin: 0px;
     font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
 }
 
 #wrapper {
@@ -9,40 +11,58 @@ body{
     border: solid black 2px;
     border-radius: 30px;
     background-color: blanchedalmond;
+    width: 1000px;
 }
 
-#form_contain {
+#form {
     display: flex;
     flex-direction: column;
 
 }
 
 form{
-    background-color: darkgray;
     padding: 6px;
     border-radius: 6px;
-    border: solid black 2px;
     font-size: larger;
 }
 
-#container {
+#result > #result {
     margin-top: 15px;
     padding: 6px;
     border-radius: 6px;
     border: solid black 2px;
-    background-color: darkgray;
+    background-color: rgba(255, 255, 255, 0.288);
 }
 
-#grid {
+#courses{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+
 }
 
-#box {
-    background-color: white;
-    border: solid black 2px;
+.done {
+    background-color: rgba(0, 128, 0, 0.253);
+}
+
+.notdone {
+    background-color: rgba(170, 16, 16, 0.315);
+}
+
+.done, .notdone {
+    border: 1px solid black;
+    display: grid;
 }
 
 
+p {
+    font-size: 12px;
+    margin: 3px;
+}
+
+h4 {
+    font-size: 15px;
+    margin: 2px;
+}
 
 
