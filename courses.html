@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="students.css" />
+    <link rel="stylesheet" href="courses.css" />
     <title>Courses by Robin Rees</title>
 </head>
 <body>
+    <div id="wrapper">
+        <button onclick="window.location.href='/students.html';">Click here for Students</button>
+        <div id="form">
+          <h1>Search Course here</h1>
+          <form>Search by course: <input type="text" id="course-search" /></form>
+          <p id="p2"><i>press enter to reset</i></p>
+        </div>
+  
+        <div id="result"></div>
+      </div>
     
 
     <script src="database.js"></script>
