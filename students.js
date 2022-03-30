@@ -100,7 +100,16 @@ function studentLastName (){
     showStudents(studentsArray)
 }
 
+function submit () {
+    let studentsArray = []
+    for ( let i = 0; i < students.length; i++){
+        if (students[i].lastName.toLowerCase().includes(searchLastName())) {
+            studentsArray.push(students[i]);
+        } 
+    }
 
+    showStudents(studentsArray)
+}
 
 input.addEventListener("submit", submit);
 
