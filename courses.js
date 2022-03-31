@@ -83,4 +83,39 @@ function findStudents(courses) {
         }
     }
     return studentBox.toString().split(",").join("");
-} 
+}
+
+
+
+function searchCourse() {
+    return input.value.toLowerCase();
+}
+
+let input = document.getElementById("course-search");
+input.addEventListener("keyup", courseSearch);
+
+function courseSearch() {
+    let coursesArray = []
+    for (let i = 0; i < courses.length; i++){
+        document.getElementById("result").innerHTML = ""
+        if ("" == searchCourse()) {
+            document.getElementById("result").innerHTML = ""
+        } else if (courses[i].title.toLowerCase().includes(searchCourse())) {
+            coursesArray.push(courses[i]);
+        }
+    }
+
+    renderCourses(coursesArray)
+}
+
+function submit () {
+    let coursesArray = []
+    for (let i = 0; i < courses.length; i++) {
+        if (courses[i].courses.toLowerCase().includes(searchCourse)) {
+            coursesArray.push(courses[i]);
+        }
+    }
+    renderCourses(coursesArray)
+}
+
+input.addEventListener("submit", submit);
