@@ -119,3 +119,5 @@ function submit () {
 }
 
 input.addEventListener("submit", submit);
+
+renderCourses(DATABASE.courses);
