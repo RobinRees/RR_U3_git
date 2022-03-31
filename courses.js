@@ -32,3 +32,55 @@ function renderCourses (courses) {
         coursesElement.appendChild(courseElement);
     }
 }
+
+function findResponsible (courses) {
+    let responsibleBox = []
+        for (let i = 0; i < DATABASE.teachers.length; i++) {
+        let div = document.createElement("div")
+        if (DATABASE.teachers[i].teacherId == courses.courseResponsible) {
+            let text = div.innerHTML = `
+            <div id="responsibleteacher"><h4>${DATABASE.teachers[i].firstName} ${DATABASE.teachers[i].lastName} (${DATABASE.teachers[i].post})</h2>`
+            responsibleBox.push(text);
+    
+        } 
+    }
+    return responsibleBox.toString().split(",").join(""); 
+}     
+    
+function findTeachers(courses) {
+    let teacherBox = [];
+    for (let i = 0; i < DATABASE.teachers.length; i++) {
+        let div = document.createElement("div");
+        for ( let x = 0; x < courses.teachers.length; x++)
+        if (DATABASE.teachers[i].teacherId == courses.teachers[x]) {
+            let text = div.innerHTML = `
+            <div id="findteachers"><h4>${DATABASE.teachers[i].firstName} ${DATABASE.teachers[i].lastName} (${DATABASE.teachers[i].post})  </h4></div>`
+            teacherBox.push(text);
+        } else if (DATABASE.teachers[i].teacherId == courses.teachers[x]) {
+            let text = div.innerHTML = `
+            <div id="findteachers"><h4>${DATABASE.teachers[i].firstName} ${DATABASE.teachers[i].lastName} (${DATABASE.teachers[i].post})  </h4></div>`
+            teacherBox.push(text);
+        }
+    }
+    return teacherBox.toString().split(",").join("");
+} 
+    
+function findStudents(courses) {
+    let studentBox = [];
+    for (let i = 0; i < DATABASE.students.length; i++) {
+        let div = document.createElement("div");
+        for ( let x = 0; x <DATABASE.students[i].courses.length; x++)
+        if (DATABASE.students[i].courses[x].courseId == courses.courseId && DATABASE.students[i].courses[x].passedCredits == courses.totalCredits) {
+            let text = div.innerHTML = `
+            <div class="done"><h4>${DATABASE.students[i].firstName} ${DATABASE.students[i].lastName} (${DATABASE.students[i].courses[x].passedCredits} credits)  </h4>
+            <p>${DATABASE.students[i].courses[x].started.semester} ${DATABASE.students[i].courses[x].started.year}</div>`
+            studentBox.push(text);
+        } else if (DATABASE.students[i].courses[x].courseId == courses.courseId){
+            let text = div.innerHTML = `
+            <div class="notdone"><h4>${DATABASE.students[i].firstName} ${DATABASE.students[i].lastName} (${DATABASE.students[i].courses[x].passedCredits} credits)  </h4>
+            <p>${DATABASE.students[i].courses[x].started.semester} ${DATABASE.students[i].courses[x].started.year}</div>`
+            studentBox.push(text);
+        }
+    }
+    return studentBox.toString().split(",").join("");
+} 
